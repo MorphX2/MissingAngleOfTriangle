@@ -7,6 +7,7 @@ BUILDDIR=builds
 SOURCE=src
 
 output: 
+	if [ ! -d $(BUILDDIR) ]; then mkdir $(BUILDDIR); fi;
 	gcc $(SOURCE)/main.c -o $(BUILDDIR)/missingSides
 
 target: missingSides
