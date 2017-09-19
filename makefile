@@ -6,12 +6,12 @@ LFLAGS = -Wall $(DEBUG)
 BUILDDIR=builds
 SOURCE=src
 
-output: 
+output:
 	if [ ! -d $(BUILDDIR) ]; then mkdir $(BUILDDIR); fi;
 	gcc $(SOURCE)/main.c -o $(BUILDDIR)/missingSides
 
 target: missingSides
 	gcc -g -o $(BUILDDIR)/missingSides $(SOURCE)/main.c
-	
 
-
+clean:
+	rm -rf $(BUILDDIR)

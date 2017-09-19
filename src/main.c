@@ -1,16 +1,17 @@
+#define NULL 0
 #include <stdio.h>
 
 int main() {
-  int * angleA;
-  int * angleB;
-  int * angleC;
+  int  angleA;
+  int  angleB;
+  int  angleC;
   int missingAng;
 
-  printf("Please input values for three angles: ");
-  scanf("%d, %d, %d", &*angleA, &*angleB, &*angleC);
+  printf("INSTRUCTIONS: Please input values for three angles. If any given angle is undefined please enter a zero: ");
+  scanf("%d, %d, %d", &angleA, &angleB, &angleC);
 
-  if ( *angleA > 0 && *angleB > 0 && *angleC > 0 ) {
-    printf("The angles of your triangle are: %d, %d, and %d \n", *angleA, *angleB, *angleC);
+  if ( angleA > 0 && angleB > 0 && angleC > 0 ) {
+    printf("The angles of your triangle are: %d, %d, and %d \n", angleA, angleB, angleC);
   }
   else if ( angleA == NULL ) {
     printf("angle A has no value");
