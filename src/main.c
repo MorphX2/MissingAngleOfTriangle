@@ -1,14 +1,7 @@
 #include <stdio.h>
 
-int main() {
-  int  angleA = 0;
-  int  angleB = 0;
-  int  angleC = 0;
+int calculations(angleA, angleB, angleC) {
   int missingAng;
-
-  printf("INSTRUCTIONS: Please input values for three angles. \nIf any given angle is undefined please enter a zero. Program will only except comma seperate values: ");
-  scanf("%d, %d, %d", &angleA, &angleB, &angleC); // Desired ability would be to either have the user type undefined or leave the comma position blank for A, B, C
-  // Would like condition to be dynamic where the logic is not constrained to the order of A, B, or C. The user doesn't intuitively know what position the commas represent.
   if ( angleA > 0 && angleB > 0 && angleC > 0 ) {
     printf("The angles of your triangle are: %d, %d, and %d \n", angleA, angleB, angleC);
   }
@@ -33,5 +26,36 @@ int main() {
   else {
     printf("No missing value to calculate \n");
   }
+  return 0;
+}
+
+int checker(angleA, angleB, angleC) {
+  while((angleA + angleB + angleC) > 180) {
+    printf("The sum of the angle(s) entered is greated then 180 degrees please enter valid angles: ");
+    scanf("%d, %d, %d", &angleA, &angleB, &angleC);
+    if (angleA + angleB + angleC == 180) {
+      printf("Angle entries are compliant with sum of triangles.\n");
+      printf("Angles are %d, %d, %d", angleA, angleB, angleC);
+      break;
+    }
+    else {
+      printf("Performing Calculations to find the missing angle. \n");
+      break;
+    }
+  }
+  return (angleA, angleB, angleC);
+}
+
+int main() {
+  int  angleA = 0;
+  int  angleB = 0;
+  int  angleC = 0;
+
+  printf("INSTRUCTIONS: Please input values for three angles. \nIf any given angle is undefined please enter a zero. Program will only except comma seperate values: ");
+  scanf("%d, %d, %d", &angleA, &angleB, &angleC); // Desired ability would be to either have the user type undefined or leave the comma position blank for A, B, C
+  // Would like condition to be dynamic where the logic is not constrained to the order of A, B, or C. The user doesn't intuitively know what position the commas represent.
+
+  checker(angleA, angleB, angleC);
+  calculations(angleA, angleB, angleC);
   return 0;
 }
