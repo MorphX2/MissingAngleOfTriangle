@@ -1,41 +1,40 @@
 #include <stdio.h>
 
-int calculations(angleA, angleB, angleC) {
-  int missingAng;
-  if ( angleA > 0 && angleB > 0 && angleC > 0 ) {
-    printf("The angles of your triangle are: %d, %d, and %d \n", angleA, angleB, angleC);
+void calculations(int * angleA, int * angleB, int * angleC) {
+  int missingAng = 0;
+  if ( *angleA > 0 && *angleB > 0 && *angleC > 0 ) {
+    printf("The angles of your triangle are: %d, %d, and %d \n", *angleA, *angleB, *angleC);
   }
-  else if ( angleA == 0 && angleB == 0 && angleC == 0 ) {
+  else if ( *angleA == 0 && *angleB == 0 && *angleC == 0 ) {
     printf("angle(s) A, B, and C are all undefined \n");
   }
-  else if ( angleA == 0 ) {
+  else if ( *angleA == 0 ) {
     printf("angle A has no value \n");
-    missingAng = 180 - (int)(angleB + angleC);
+    missingAng = 180 - (*angleB + *angleC);
     printf("Missing angle A is: %d degrees \n", missingAng);
   }
-  else if ( angleB == 0 ) {
+  else if ( *angleB == 0 ) {
     printf("angle B has no value \n");
-    missingAng = 180 - (angleC + angleA);
+    missingAng = 180 - (*angleC + *angleA);
     printf("Missing angle B is: %d degrees \n", missingAng);
   }
-  else if ( angleC == 0 ) {
+  else if ( *angleC == 0 ) {
     printf("angle C hase no value \n");
-    missingAng = 180 - (angleA + angleB);
+    missingAng = 180 - (*angleA + *angleB);
     printf("Missing angle C is: %d \n", missingAng);
   }
   else {
     printf("No missing value to calculate \n");
   }
-  return 0;
 }
 
-int checker(angleA, angleB, angleC) {
-  while((angleA + angleB + angleC) > 180) {
+void checker( int * angleA, int * angleB, int * angleC) {
+  while((*angleA + *angleB + *angleC) > 180) {
     printf("The sum of the angle(s) entered is greated then 180 degrees please enter valid angles: ");
-    scanf("%d, %d, %d", &angleA, &angleB, &angleC);
-    if (angleA + angleB + angleC == 180) {
+    scanf("%d, %d, %d", angleA, angleB, angleC);
+    if (*angleA + *angleB + *angleC == 180) {
       printf("Angle entries are compliant with sum of triangles.\n");
-      printf("Angles are %d, %d, %d", angleA, angleB, angleC);
+      printf("Angles are %d, %d, %d", *angleA, *angleB, *angleC);
       break;
     }
     else {
@@ -43,7 +42,6 @@ int checker(angleA, angleB, angleC) {
       break;
     }
   }
-  return (angleA, angleB, angleC);
 }
 
 int main() {
@@ -55,7 +53,7 @@ int main() {
   scanf("%d, %d, %d", &angleA, &angleB, &angleC); // Desired ability would be to either have the user type undefined or leave the comma position blank for A, B, C
   // Would like condition to be dynamic where the logic is not constrained to the order of A, B, or C. The user doesn't intuitively know what position the commas represent.
 
-  checker(angleA, angleB, angleC);
-  calculations(angleA, angleB, angleC);
+  checker(&angleA, &angleB, &angleC);
+  calculations(&angleA, &angleB, &angleC);
   return 0;
 }
