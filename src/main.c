@@ -30,16 +30,12 @@ void calculations(int * angleA, int * angleB, int * angleC) {
 
 void checker( int * angleA, int * angleB, int * angleC) {
   while((*angleA + *angleB + *angleC) > 180) {
+
     printf("The sum of the angle(s) entered is greated then 180 degrees please enter valid angles: ");
     scanf("%d, %d, %d", angleA, angleB, angleC);
     if (*angleA + *angleB + *angleC == 180) {
       printf("Angle entries are compliant with sum of triangles.\n");
-      printf("Angles are %d, %d, %d", *angleA, *angleB, *angleC);
-      break;
-    }
-    else {
-      printf("Performing Calculations to find the missing angle. \n");
-      break;
+      printf("Performing calculations for for missing angle: \n");
     }
   }
 }
