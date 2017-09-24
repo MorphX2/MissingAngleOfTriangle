@@ -3,7 +3,7 @@ A program to compute the missing angle based on a given input. The finished prog
 
 Download Instructions:
 
-* Cloning the project from Git:
+* Cloning the project from Github:
   * Ensure that you have git installed on your system.
   * Open up a terminal and run:
     * git clone https://github.com/jcrizzle2/MissingAngleOfTriangle.git
