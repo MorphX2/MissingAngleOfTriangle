@@ -4,18 +4,18 @@ A program to compute the missing angle based on a given input. The finished prog
 Download Instructions:
 
 * Cloning the project from Git:
-* * Ensure that you have git installed on your system
-* * Open up a terminal and run:
-* * * git clone https://github.com/jcrizzle2/MissingAngleOfTriangle.git
+  * Ensure that you have git installed on your system.
+  * Open up a terminal and run:
+    * git clone https://github.com/jcrizzle2/MissingAngleOfTriangle.git
 
 Compilation instructions:
 
 * Mac:
-* * Ensure that you have the gcc compiler installed
-* * * In the MissingAngleOfTriangle directory root, and run the command: make
+   * Ensure that you have the gcc compiler installed
+     * In the root of the MissingAngleOfTriangle directory, and run the command: make
 
 Cleaning the work directory:
 * Mac:
-* * Ensure that you in the MissingAngleOfTriangle directory root.
-* * * Run the command: make clean
+  * Ensure that you are in the root of the MissingAngleOfTriangle directory.
+    * Run the command: make clean
 
